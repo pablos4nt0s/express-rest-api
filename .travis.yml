@@ -13,3 +13,6 @@ git:
   depth: 3
 after_script:
   - yarn report-coverage
+addons:
+  code_climate:
+    repo_token: faf36c7fd9220a1d0aa402101bf94486a5f07f32a19bbc809a66dec6928e384f
