@@ -13,6 +13,8 @@ engines:
         enabled: false
       import/no-extraneous-dependencies:
         enabled: false
+      linebreak-style:
+        enabled: false  
 ratings:
    paths:
    - server/**
