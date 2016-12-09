@@ -11,7 +11,7 @@
 
 Node.js implementation of a REST API using express, mongoose and ES6. It uses JWT authentication and brute-force protection by rate limiting income requests. Also helps your team to promote best practices by following simple conventions.
 
-### features
+## features
 
 - ES6 via Babel [Babel](https://babeljs.io/).
 - Authentication via JsonWebToken [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken).
@@ -32,8 +32,13 @@ Node.js implementation of a REST API using express, mongoose and ES6. It uses JW
 
 Clone the repo:
 ```sh
-git clone git@github.com:rectius/express-rest-api.git
+git clone https://github.com/rectius/express-rest-api.git
 cd express-rest-api
+```
+
+Install tools:
+```js
+npm install -g istanbul coveralls
 ```
 
 Install yarn:
@@ -106,10 +111,10 @@ gulp
 4. pm2 start dist/index.js
 ```
 
-### maintainers
+## maintainers
 
 Pablo Souza (Twitter: <a href="https://twitter.com/pablosouza">@pablosouza</a>)
 
-### license
+## license
 
 MIT. Copyright (c) [Pablo Souza](http://pablosouza.rectius.com.br).

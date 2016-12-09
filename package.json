@@ -15,7 +15,7 @@
     "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
-    "test": "SET NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
+    "test": "NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
     "test:watch": "yarn test -- --watch",
     "test:check-coverage": "yarn test && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
@@ -34,8 +34,7 @@
     "mocha",
     "istanbul",
     "REST",
-    "API",
-    "boilerplate"
+    "API"
   ],
   "dependencies": {
     "bluebird": "3.4.6",
@@ -67,7 +66,7 @@
     "babel-preset-stage-2": "6.18.0",
     "chai": "^3.4.1",
     "commitizen": "^2.8.2",
-    "coveralls": "^2.11.6",
+    "coveralls": "2.11.15",
     "cz-conventional-changelog": "1.2.0",
     "del": "^2.2.0",
     "eslint": "3.11.1",
@@ -86,6 +85,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "isparta": "4.0.0",
+    "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "run-sequence": "^1.1.5",
     "supertest": "2.0.1",
