@@ -1,11 +1,14 @@
-# express-rest-api [![travis][travis-image]][travis-url] [![Issue Count][codeclimate-image]][codeclimate-url] [![Commitizen friendly][commitizen-image]][commitizen-url]
+# express-rest-api [![travis][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Issue Count][codeclimate-image]][codeclimate-url] [![Commitizen friendly][commitizen-image]][commitizen-url]
 
 [travis-image]: https://img.shields.io/travis/rectius/express-rest-api/master.svg
 [travis-url]: https://travis-ci.org/rectius/express-rest-api
-[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
-[commitizen-url]: http://commitizen.github.io/cz-cli/
+[coveralls-image]: https://coveralls.io/repos/github/rectius/express-rest-api/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/rectius/express-rest-api?branch=master
 [codeclimate-image]: https://codeclimate.com/github/rectius/express-rest-api/badges/issue_count.svg
 [codeclimate-url]: https://codeclimate.com/github/rectius/express-rest-api
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+
 
 ### simple, robust, REST API implementation
 
