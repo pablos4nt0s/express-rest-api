@@ -18,89 +18,38 @@ after((done) => {
 });
 
 describe('## User APIs', () => {
-  let user = {
-    username: 'KK123',
-    mobileNumber: '1234567890'
+  let token;
+  const user = {
+    username: 'pablo',
+    password: 'rectius'
   };
 
-  describe('# POST /api/users', () => {
-    it('should create a new user', (done) => {
+  describe('# POST /api/auth/login', () => {
+    it('should return a JWT token', (done) => {
       request(app)
-        .post('/api/users')
+        .post('/api/auth/login')
         .send(user)
         .expect(httpStatus.OK)
         .then((res) => {
+          expect(res.body).to.have.property('username');
+          expect(res.body).to.have.property('token');
           expect(res.body.username).to.equal(user.username);
-          expect(res.body.mobileNumber).to.equal(user.mobileNumber);
-          user = res.body;
+          token = res.body.token;
           done();
         })
         .catch(done);
     });
   });
 
-  describe('# GET /api/users/:userId', () => {
-    it('should get user details', (done) => {
+  describe('# GET /api/auth/random-number', () => {
+    it('should get a random number', (done) => {
       request(app)
-        .get(`/api/users/${user._id}`)
+        .get('/api/auth/random-number')
+        .set('Authorization', `Bearer ${token}`)
         .expect(httpStatus.OK)
         .then((res) => {
-          expect(res.body.username).to.equal(user.username);
-          expect(res.body.mobileNumber).to.equal(user.mobileNumber);
-          done();
-        })
-        .catch(done);
-    });
-
-    it('should report error with message - Not found, when user does not exists', (done) => {
-      request(app)
-        .get('/api/users/56c787ccc67fc16ccc1a5e92')
-        .expect(httpStatus.NOT_FOUND)
-        .then((res) => {
-          expect(res.body.message).to.equal('Not Found');
-          done();
-        })
-        .catch(done);
-    });
-  });
-
-  describe('# PUT /api/users/:userId', () => {
-    it('should update user details', (done) => {
-      user.username = 'KK';
-      request(app)
-        .put(`/api/users/${user._id}`)
-        .send(user)
-        .expect(httpStatus.OK)
-        .then((res) => {
-          expect(res.body.username).to.equal('KK');
-          expect(res.body.mobileNumber).to.equal(user.mobileNumber);
-          done();
-        })
-        .catch(done);
-    });
-  });
-
-  describe('# GET /api/users/', () => {
-    it('should get all users', (done) => {
-      request(app)
-        .get('/api/users')
-        .expect(httpStatus.OK)
-        .then((res) => {
-          expect(res.body).to.be.an('array');
-          done();
-        })
-        .catch(done);
-    });
-  });
-
-  describe('# DELETE /api/users/', () => {
-    it('should delete user', (done) => {
-      request(app)
-        .delete(`/api/users/${user._id}`)
-        .expect(httpStatus.OK)
-        .then((res) => {
-          expect(res.body.username).to.equal('KK');
-          expect(res.body.mobileNumber).to.equal(user.mobileNumber);
+          expect(res.body).to.have.property('user');
+          expect(res.body.user.username).to.equal(user.username);
           done();
         })
         .catch(done);
