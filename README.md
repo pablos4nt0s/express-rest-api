@@ -41,7 +41,7 @@ cd express-rest-api
 
 Install tools:
 ```js
-npm install -g istanbul coveralls
+npm install -g istanbul coveralls commitizen
 ```
 
 Install yarn:
