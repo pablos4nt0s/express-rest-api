@@ -116,7 +116,7 @@ gulp
 
 ## maintainers
 
-Pablo Souza (Twitter: <a href="https://twitter.com/pablosouza">@pablosouza</a>)
+Pablo Souza (Twitter: <a href="https://twitter.com/pablo_souza">@pablo_souza</a>)
 
 ## license
 
