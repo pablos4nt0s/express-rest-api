@@ -2,6 +2,6 @@ export default {
   env: 'development',
   MONGOOSE_DEBUG: true,
   jwtSecret: 'my-jwt-secret',
-  db: 'mongodb://localhost/express-rest-api-development',
+  db: 'mongodb://user:pwd1010@ds119273.mlab.com:19273/rest-example',
   port: 3000
 };
